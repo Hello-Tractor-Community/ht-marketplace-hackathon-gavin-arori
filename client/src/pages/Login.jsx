@@ -91,9 +91,6 @@ const Login = () => {
                                 <p> <a target='_black' className='text-blue-500' href='http://localhost:3001/register'>Register</a> seller account</p>
                             </div>
                         </div>
-                        <div className='w-full h-full py-4 pr-4'>
-                            <img className='w-full h-[95%]' src="http://localhost:3000/images/login.jpg" alt="" />
-                        </div>
                     </div>
                 </div>
             </div>

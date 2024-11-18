@@ -5,7 +5,7 @@ import { GiKnightBanner } from 'react-icons/gi'
 import { useSelector, useDispatch } from 'react-redux'
 import Pagination from '../Pagination'
 import Search from '../components/Search'
-import { get_products } from '../../store/Reducers/productReducer'
+import { get_products , delete_product} from '../../store/Reducers/productReducer'
 const Products = () => {
     const dispatch = useDispatch()
     const { products, totalProduct } = useSelector(state => state.product)
@@ -22,6 +22,10 @@ const Products = () => {
         }
         dispatch(get_products(obj))
     }, [searchValue, currentPage, parPage])
+
+    const handleDelete = (productId) => {
+        dispatch(delete_product(productId));
+    }
 
     return (
         <div className='px-2 lg:px-7 pt-5 '>
@@ -73,7 +77,7 @@ const Products = () => {
                                         <div className='flex justify-start items-center gap-4'>
                                             <Link to={`/seller/dashboard/edit-product/${d._id}`} className='p-[6px] bg-yellow-500 rounded hover:shadow-lg hover:shadow-yellow-500/50'><FaEdit /></Link>
                                             <Link className='p-[6px] bg-green-500 rounded hover:shadow-lg hover:shadow-green-500/50'><FaEye /></Link>
-                                            <button className='p-[6px] bg-red-500 rounded hover:shadow-lg hover:shadow-red-500/50'><FaTrash /></button>
+                                            <button  onClick={() => handleDelete(d._id)} className='p-[6px] bg-red-500 rounded hover:shadow-lg hover:shadow-red-500/50'><FaTrash /></button>
                                             <Link to={`/seller/dashboard/add-banner/${d._id}`} className='p-[6px] bg-cyan-500 rounded hover:shadow-lg hover:shadow-cyan-500/50'><GiKnightBanner /></Link>
                                         </div>
                                     </td>

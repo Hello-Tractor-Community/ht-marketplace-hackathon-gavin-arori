@@ -27,7 +27,10 @@ const AddProduct = () => {
         discount: '',
         price: "",
         brand: "",
-        stock: ""
+        stock: "",
+        city: "",
+        state: "",
+        country: "",
     })
     const inputHandle = (e) => {
         setState({
@@ -101,6 +104,9 @@ const AddProduct = () => {
         formData.append('discount', state.discount)
         formData.append('shopName', userInfo?.shopInfo?.shopName)
         formData.append('brand', state.brand)
+        formData.append('city', state.city)
+        formData.append('state', state.state)
+        formData.append('country', state.country)
         for (let i = 0; i < images.length; i++) {
             formData.append('images', images[i])
         }
@@ -120,8 +126,12 @@ const AddProduct = () => {
                 discount: '',
                 price: "",
                 brand: "",
-                stock: ""
+                stock: "",
+                city: "",
+                state: "",
+                country: "",
             })
+            console.log(state)
             setImageShow([])
             setImages([])
             setCategory('')
@@ -188,6 +198,22 @@ const AddProduct = () => {
                         <div className='flex flex-col w-full gap-1 text-[#d0d2d6] mb-5'>
                             <label htmlFor="description">Description</label>
                             <textarea rows={4} className='px-4 py-2 focus:border-indigo-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]' onChange={inputHandle} value={state.description} placeholder='description' name='description' id='description'></textarea>
+                        </div>
+                        <div className='flex flex-col mb-3 md:flex-row gap-4 w-full text-[#d0d2d6]'>
+                            <div className='flex flex-col w-full gap-1'>
+                                <label htmlFor="city">City</label>
+                                <input className='px-4 py-2 focus:border-indigo-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]' onChange={inputHandle} value={state.city} type="text" placeholder='City' name='city' id='city' />
+                            </div>
+                            <div className='flex flex-col w-full gap-1'>
+                                <label htmlFor="state">State</label>
+                                <input className='px-4 py-2 focus:border-indigo-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]' onChange={inputHandle} value={state.state} type="text" placeholder='State' name='state' id='state' />
+                            </div>
+                        </div>
+                        <div className='flex flex-col mb-3 md:flex-row gap-4 w-full text-[#d0d2d6]'>
+                            <div className='flex flex-col w-full gap-1'>
+                                <label htmlFor="country">Country</label>
+                                <input className='px-4 py-2 focus:border-indigo-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]' onChange={inputHandle} value={state.country} type="text" placeholder='Country' name='country' id='country' />
+                            </div>
                         </div>
                         <div className='grid lg:grid-cols-4 grid-cols-1 md:grid-cols-3 sm:grid-cols-2 sm:gap-4 md:gap-4 xs:gap-4 gap-3 w-full text-[#d0d2d6] mb-4'>
                             {
