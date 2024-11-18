@@ -5,27 +5,27 @@ const { responseReturn } = require('../../utiles/response');
 class productController {
     add_product = async (req, res) => {
         const { id } = req;
-        const form = formidable({ multiples: true })
+        const form = formidable({ multiples: true });
 
         form.parse(req, async (err, field, files) => {
-            let { name, category, description, stock, price, discount, shopName, brand } = field;
+            let { name, category, description, stock, price, discount, shopName, brand, city, state, country } = field;
             const { images } = files;
-            name = name.trim()
-            const slug = name.split(' ').join('-')
+            name = name.trim();
+            const slug = name.split(' ').join('-');
 
             cloudinary.config({
                 cloud_name: process.env.cloud_name,
                 api_key: process.env.api_key,
                 api_secret: process.env.api_secret,
                 secure: true
-            })
+            });
 
             try {
                 let allImageUrl = [];
 
                 for (let i = 0; i < images.length; i++) {
-                    const result = await cloudinary.uploader.upload(images[i].filepath, { folder: 'products' })
-                    allImageUrl = [...allImageUrl, result.url]
+                    const result = await cloudinary.uploader.upload(images[i].filepath, { folder: 'products' });
+                    allImageUrl = [...allImageUrl, result.url];
                 }
 
                 await productModel.create({
@@ -39,16 +39,20 @@ class productController {
                     price: parseInt(price),
                     discount: parseInt(discount),
                     images: allImageUrl,
-                    brand: brand.trim()
-
-                })
-                responseReturn(res, 201, { message: "product add success" })
+                    brand: brand.trim(),
+                    location: {
+                        city: city.trim(),
+                        state: state.trim(),
+                        country: country.trim(),
+                    }
+                });
+                responseReturn(res, 201, { message: "Product added successfully" });
             } catch (error) {
-                responseReturn(res, 500, { error: error.message })
+                responseReturn(res, 500, { error: error.message });
             }
+        });
+    };
 
-        })
-    }
     products_get = async (req, res) => {
         const { page, searchValue, parPage } = req.query
         const { id } = req;
@@ -85,13 +89,20 @@ class productController {
             console.log(error.message)
         }
     }
+
     product_update = async (req, res) => {
-        let { name, description, discount, price, brand, productId, stock } = req.body;
+        let { name, description, discount, price, brand, productId, stock, city, state, country} = req.body;
+        name = name.trim();
         name = name.trim()
         const slug = name.split(' ').join('-')
         try {
             await productModel.findByIdAndUpdate(productId, {
-                name, description, discount, price, brand, productId, stock, slug
+                name, description, discount, price, brand, productId, stock, slug,
+                location: {
+                    city: city.trim(),
+                    state: state.trim(),
+                    country: country.trim(),
+                }
             })
             const product = await productModel.findById(productId)
             responseReturn(res, 200, { product, message: 'product update success' })
@@ -99,6 +110,19 @@ class productController {
             responseReturn(res, 500, { error: error.message })
         }
     }
+
+    product_delete = async (req, res) => {
+        const { productId } = req.params;
+        try {
+            const deletedProduct = await productModel.findByIdAndDelete(productId);
+            if (!deletedProduct) {
+                return responseReturn(res, 404, { error: 'Product not found' });
+            }
+            responseReturn(res, 200, { message: 'Product deleted successfully', productId });
+        } catch (error) {
+            responseReturn(res, 500, { error: error.message });
+        }
+    };
     product_image_update = async (req, res) => {
         const form = formidable({ multiples: true })
 

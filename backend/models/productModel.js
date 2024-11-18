@@ -46,6 +46,24 @@ const productSchema = new Schema({
         type: Array,
         required: true
     },
+    location: {
+        city: {
+            type: String,
+            required: true
+        },
+        state: {
+            type: String,
+            required: true
+        },
+        country: {
+            type: String,
+            required: true
+        },
+        address: {
+            type: String, 
+            required: false
+        },
+    },
     rating: {
         type: Number,
         default: 0

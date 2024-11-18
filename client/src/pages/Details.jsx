@@ -212,6 +212,7 @@ const Details = () => {
                                     </> : <h2>Price : ${product.price}</h2>
                                 }
                             </div>
+                    
                             <div className='text-slate-600'>
                                 <p>{product.description}</p>
                             </div>
