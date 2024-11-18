@@ -45,9 +45,9 @@ const AdminLogin = () => {
             <div className='w-[350px] text-[#d0d2d6] p-2'>
                 <div className='bg-[#283046] p-4 rounded-md'>
                     <div className='h-[70px] flex justify-center items-center'>
-                        <div className='w-[180px] h-[50px]'>
-                            <img className='w-full h-full' src="http://localhost:3000/images/logo.png" alt="image" />
-                        </div>
+                    <div className='relative flex h-16 items-center justify-between gap-2 sm:gap-2'>
+              <span className=' font-bold text-white text-[22px]'>Tractor Hub</span>
+        </div>
                     </div>
                     <form onSubmit={submit}>
                         <div className='flex flex-col w-full gap-1 mb-3'>

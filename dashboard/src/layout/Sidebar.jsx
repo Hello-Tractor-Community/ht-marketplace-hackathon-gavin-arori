@@ -25,9 +25,10 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
       <div onClick={() => setShowSidebar(false)} className={`fixed duration-200 ${!showSidebar ? 'invisible' : 'visible'} w-screen h-screen bg-[#22292f80] top-0 left-0 z-10`}></div>
       <div className={`w-[260px] fixed bg-[#283046] z-50 top-0 h-screen shadow-[0_0_15px_0_rgb(34_41_47_/_5%)] transition-all ${showSidebar ? 'left-0' : '-left-[260px] lg:left-0'}`}>
         <div className='h-[70px] flex justify-center items-center'>
-          <Link to='/' className='w-[180px] h-[50px]'>
-            <img className='w-full h-full' src={logo} alt="" />
-          </Link>
+        <Link className='relative flex h-16 items-center justify-between gap-2 sm:gap-2' to='/'>
+              <img src="https://cdn.vectorstock.com/i/1000v/15/40/tractor-logo-emblem-design-vector-44971540.avif" className='h-16 w-16' alt="logo" />
+              <span className=' font-bold text-white text-[22px]'>Tractor Hub</span>
+        </Link>
         </div>
         <div className='px-[16px]'>
           <ul>
