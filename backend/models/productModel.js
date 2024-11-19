@@ -59,10 +59,6 @@ const productSchema = new Schema({
             type: String,
             required: true
         },
-        address: {
-            type: String, 
-            required: false
-        },
     },
     rating: {
         type: Number,

@@ -86,19 +86,33 @@ export const get_banners = createAsyncThunk(
 
 export const query_products = createAsyncThunk(
     'product/query_products',
-    async (query, {
-        fulfillWithValue
-    }) => {
+    async (query, { fulfillWithValue, rejectWithValue }) => {
         try {
-            const {
-                data
-            } = await api.get(`/home/query-products?category=${query.category}&&rating=${query.rating}&&lowPrice=${query.low}&&highPrice=${query.high}&&sortPrice=${query.sortPrice}&&pageNumber=${query.pageNumber}&&searchValue=${query.searchValue ? query.searchValue : ''}`)
-            return fulfillWithValue(data)
+            // Construct query parameters dynamically
+            const params = new URLSearchParams();
+
+            if (query.category) params.append('category', query.category);
+            if (query.rating) params.append('rating', query.rating);
+            if (query.low) params.append('lowPrice', query.low);
+            if (query.high) params.append('highPrice', query.high);
+            if (query.sortPrice) params.append('sortPrice', query.sortPrice);
+            if (query.pageNumber) params.append('pageNumber', query.pageNumber);
+            if (query.searchValue) params.append('searchValue', query.searchValue);
+
+            // Construct the full URL
+            const url = `/home/query-products?${params.toString()}`;
+
+            // Make the API request
+            const { data } = await api.get(url);
+             console.log(data)
+            return fulfillWithValue(data);
         } catch (error) {
-            console.log(error.response)
+            console.log(error.response);
+            return rejectWithValue(error.response.data);
         }
     }
-)
+);
+
 
 export const customer_review = createAsyncThunk(
     'review/customer_review',
