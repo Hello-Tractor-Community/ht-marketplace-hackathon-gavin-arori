@@ -185,7 +185,7 @@ const Details = () => {
                                             product.images.map((img, i) => {
                                                 return (
                                                     <div key={i} onClick={() => setImage(img)}>
-                                                        <img className='h-[120px] cursor-pointer' src={img} alt="" />
+                                                        <img className='h-[120px] cursor-pointer' src={img[0]} alt="" />
                                                     </div>
                                                 )
                                             })
@@ -307,7 +307,7 @@ const Details = () => {
                                     {
                                         moreProducts.map((p, i) => {
                                             return (
-                                                <Link className='block'>
+                                                <Link to={`/product/details/${p.slug}`}  className='block'>
                                                     <div className='relative h-[270px]'>
                                                         <img className='w-full h-full' src={p.images[0]} />
                                                         {
@@ -358,7 +358,7 @@ const Details = () => {
                                 relatedProducts.map((p, i) => {
                                     return (
                                         <SwiperSlide key={i}>
-                                            <Link className='block'>
+                                            <Link to={`/product/details/${p.slug}`}  className='block'>
                                                 <div className='relative h-[270px]'>
                                                     <div className='w-full h-full'>
                                                         <img className='w-full h-full' src={p.images[0]} />

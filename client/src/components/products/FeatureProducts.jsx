@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import toast from 'react-hot-toast'
 import Ratings from '../Ratings'
-import { add_to_card, messageClear, add_to_wishlist } from '../../store/reducers/cardReducer'
+import { add_to_card, messageClear} from '../../store/reducers/cardReducer'
 
 const FeatureProducts = ({ products }) => {
 
@@ -37,18 +37,7 @@ const FeatureProducts = ({ products }) => {
         }
     }, [errorMessage, successMessage])
 
-    const add_wishlist = (pro) => {
-        dispatch(add_to_wishlist({
-            userId: userInfo.id,
-            productId: pro._id,
-            name: pro.name,
-            price: pro.price,
-            image: pro.images[0],
-            discount: pro.discount,
-            rating: pro.rating,
-            slug: pro.slug
-        }))
-    }
+
     return (
         <div className='w-[85%] flex flex-wrap mx-auto'>
             <div className='w-full'>
@@ -57,7 +46,7 @@ const FeatureProducts = ({ products }) => {
                     <div className='w-[100px] h-[4px] bg-black mt-4'></div>
                 </div>
             </div>
-            <div className='w-full grid grid-cols-4 md-lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6'>
+            <div className='w-full grid grid-cols-4 md-lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 rounded-lg'>
                 {
                     products.map((p, i) => <div key={i} className='border group transition-all duration-500 hover:shadow-md hover:-mt-3'>
                         <div className='relative overflow-hidden'>
@@ -71,7 +60,8 @@ const FeatureProducts = ({ products }) => {
                             </ul>
                         </div>
                         <div className='py-3 text-slate-600 px-2'>
-                            <h2>{p.name}</h2>
+                            <h2 className='mb-2'>{p.name}</h2>
+                            <p>Location: {p.location.city}</p>
                             <div className='flex justify-start items-center gap-3'>
                                 <span className='text-lg  font-bold'>${p.price}</span>
                                 <div className='flex'>
