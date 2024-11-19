@@ -22,6 +22,7 @@ const Headers = () => {
     const [searchValue, setSearchValue] = useState('')
     const [category, setCategory] = useState('')
 
+   
     const search = () => {
         navigate(`/products/search?category=${category}&&value=${searchValue}`)
     }

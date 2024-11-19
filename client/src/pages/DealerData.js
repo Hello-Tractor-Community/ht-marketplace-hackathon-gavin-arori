@@ -1,4 +1,4 @@
-// dealerships.js
+
 export const dealerships = {
     cmc: [
       {
