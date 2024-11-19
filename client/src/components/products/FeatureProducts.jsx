@@ -53,7 +53,7 @@ const FeatureProducts = ({ products }) => {
         <div className='w-[85%] flex flex-wrap mx-auto'>
             <div className='w-full'>
                 <div className='text-center flex justify-center items-center flex-col text-4xl text-slate-600 font-bold relative pb-[45px]'>
-                    <h2 className='text-black'>Feature Products</h2>
+                    <h2 className='text-black'>Feature Tractors</h2>
                     <div className='w-[100px] h-[4px] bg-black mt-4'></div>
                 </div>
             </div>

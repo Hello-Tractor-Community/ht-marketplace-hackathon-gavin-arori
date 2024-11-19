@@ -212,7 +212,18 @@ const Details = () => {
                                     </> : <h2>Price : ${product.price}</h2>
                                 }
                             </div>
-                    
+                            <div className='flex gap-2 py-3'>
+                                <p>Location:</p>
+                                    {product.location?.state && (
+                                            <p className="text-gray-700">{product.location.state},</p>
+                                    )}
+                                    {product.location?.city && (
+                                            <p className="text-gray-700">{product.location.city},</p>
+                                    )}
+                                    {product.location?.country && (
+                                    <p className="text-gray-700">{product.location.country}</p>
+                                    )}
+                            </div>
                             <div className='text-slate-600'>
                                 <p>{product.description}</p>
                             </div>

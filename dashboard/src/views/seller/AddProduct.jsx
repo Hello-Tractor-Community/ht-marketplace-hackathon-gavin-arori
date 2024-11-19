@@ -55,6 +55,7 @@ const AddProduct = () => {
     }
     const [images, setImages] = useState([])
     const [imageShow, setImageShow] = useState([])
+    
     const inmageHandle = (e) => {
         const files = e.target.files
         const length = files.length;
