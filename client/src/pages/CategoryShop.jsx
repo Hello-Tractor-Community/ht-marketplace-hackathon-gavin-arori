@@ -32,10 +32,17 @@ const CategoryShops = () => {
         dispatch(price_range_product())
     }, [])
     useEffect(() => {
-        setState({
-            values: [priceRange.low, priceRange.high === priceRange.low ? priceRange.high + 1 : priceRange.hight]
-        })
-    }, [priceRange])
+        if (priceRange.high <= priceRange.low) {
+            setState({
+                values: [priceRange.low, priceRange.low + 1] 
+            });
+        } else {
+            setState({
+                values: [priceRange.low, priceRange.high]
+            });
+        }
+    }, [priceRange]);
+    
 
     useEffect(() => {
         dispatch(
@@ -76,21 +83,21 @@ const CategoryShops = () => {
                             <div className='py-2 flex flex-col gap-5'>
                                 <h2 className='text-3xl font-bold mb-3 text-slate-600'>Price</h2>
                                 <Range
-                                    step={1}
-                                    min={priceRange.low}
-                                    max={priceRange.high === priceRange.low ? priceRange.high + 1 : priceRange.hight}
-                                    values={state.values}
-                                    onChange={(values) => setState({ values })}
-                                    renderTrack={({ props, children }) => (
-                                        <div {...props} className='w-full h-[6px] bg-slate-200 rounded-full cursor-default'>
-                                            {children}
-                                        </div>
-                                    )}
-                                    renderThumb={({ props }) => (
-                                        <div className='w-[15px] h-[15px] bg-blue-500 rounded-full' {...props} />
+                                step={1}
+                                min={priceRange.low}
+                                max={Math.max(priceRange.high, priceRange.low + 1)} 
+                                values={state.values}
+                                onChange={(values) => setState({ values })}
+                                renderTrack={({ props, children }) => (
+                                <div {...props} className='w-full h-[6px] bg-slate-200 rounded-full cursor-default'>
+                                {children}
+                                </div>
+                                )}
+                            renderThumb={({ props }) => (
+                                <div className='w-[15px] h-[15px] bg-blue-500 rounded-full' {...props} />
+                                )}
+                            />
 
-                                    )}
-                                />
                                 <div>
                                     <span className='text-red-500 font-bold text-lg'>${Math.floor(state.values[0])} - ${Math.floor(state.values[1])}</span>
                                 </div>
