@@ -143,26 +143,58 @@ class homeControllers {
     }
 
     query_products = async (req, res) => {
-        const parPage = 12
-        req.query.parPage = parPage
+        const parPage = 12;
+        req.query.parPage = parPage;
+    
         try {
-            const products = await productModel.find({}).sort({
-                createdAt: -1
-            })
-            const totalProduct = new queryProducts(products, req.query).categoryQuery().searchQuery().priceQuery().ratingQuery().sortByPrice().countProducts();
-
-            const result = new queryProducts(products, req.query).categoryQuery().searchQuery().ratingQuery().priceQuery().sortByPrice().skip().limit().getProducts();
-
+            const { category, location, search, lowPrice, highPrice, sortPrice, pageNumber } = req.query;
+    
+            // Build query object for MongoDB
+            let queryObject = {};
+    
+            if (category) queryObject.category = category;
+    
+            if (location) {
+                // Match any of the nested location fields
+                if (location.city) queryObject['location.city'] = location.city;
+                if (location.state) queryObject['location.state'] = location.state;
+                if (location.country) queryObject['location.country'] = location.country;
+            }
+    
+            if (search) {
+                queryObject.$text = { $search: search }; // MongoDB text search
+            }
+    
+            if (lowPrice !== undefined && highPrice !== undefined) {
+                queryObject.price = { $gte: parseFloat(lowPrice), $lte: parseFloat(highPrice) };
+            }
+    
+            let productsQuery = productModel.find(queryObject);
+    
+            // Sorting
+            if (sortPrice) {
+                productsQuery = productsQuery.sort({ price: sortPrice === 'low-to-high' ? 1 : -1 });
+            }
+    
+            // Pagination
+            const skip = (parseInt(pageNumber) - 1) * parPage;
+            productsQuery = productsQuery.skip(skip).limit(parPage);
+    
+            const products = await productsQuery;
+            const totalProduct = await productModel.countDocuments(queryObject);
+    
             responseReturn(res, 200, {
-                products: result,
+                products,
                 totalProduct,
                 parPage
-            })
-
+            });
+    
         } catch (error) {
-            console.log(error.message)
+            console.log(error.message);
         }
-    }
+    };
+    
+    
 
     submit_review = async (req, res) => {
         const {
