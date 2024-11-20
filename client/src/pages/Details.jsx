@@ -171,7 +171,7 @@ const Details = () => {
                     <div className='grid grid-cols-2 md-lg:grid-cols-1 gap-8'>
                         <div>
                             <div className='p-5 border'>
-                                <img className='h-[500px] w-full' src={image ? image : product.images?.[0]} alt="" />
+                            <img className='h-[500px] w-full' src={image || product.images?.[0]} alt="Product Image" />
                             </div>
                             <div className='py-3'>
                                 {
@@ -182,13 +182,13 @@ const Details = () => {
                                         transitionDuration={500}
                                     >
                                         {
-                                            product.images.map((img, i) => {
-                                                return (
-                                                    <div key={i} onClick={() => setImage(img)}>
-                                                        <img className='h-[120px] cursor-pointer' src={img[0]} alt="" />
-                                                    </div>
-                                                )
-                                            })
+                                           product.images.map((img, i) => {
+                                            return (
+                                                <div key={i} onClick={() => setImage(img)}>
+                                                    <img className='h-[120px] cursor-pointer' src={img} alt={`Thumbnail ${i}`} />
+                                                </div>
+                                            );
+                                        })
                                         }
                                     </Carousel>
                                 }
