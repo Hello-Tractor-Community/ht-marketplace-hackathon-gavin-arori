@@ -146,97 +146,6 @@
 ---
 
 
-
-
-📂 public
-└── 📄 index.html      # Main HTML file for the application
-
-📂 src
-├── 📂 api
-│   └── 📄 api.js       # Centralized API calls and configurations
-│
-├── 📂 assets
-│   └── (images, stylesheets, or other assets go here)
-│
-├── 📂 layout
-│   ├── 📄 Header.jsx       # Application header component
-│   ├── 📄 MainLayout.jsx   # Main layout wrapper for the app
-│   └── 📄 Sidebar.jsx      # Sidebar navigation component
-│
-├── 📂 navigation
-│   ├── 📄 allNav.js        # Centralized navigation items
-│   └── 📄 index.js         # Navigation index for exporting
-│
-├── 📂 router
-│   ├── 📂 routes
-│   │   ├── 📄 adminRoutes.js      # Admin-specific route definitions
-│   │   ├── 📄 privateRoutes.js    # Private route definitions
-│   │   ├── 📄 ProtectRoute.jsx    # Guard for protected routes
-│   │   ├── 📄 publicRoutes.js     # Public route definitions
-│   │   └── 📄 sellerRoutes.js     # Seller-specific route definitions
-│   └── 📄 Router.jsx              # Centralized routing configuration
-│
-├── 📂 store
-│   ├── 📂 Reducers
-│   │   ├── 📄 authReducer.js           # Reducer for authentication
-│   │   ├── 📄 bannerReducer.js         # Reducer for banners
-│   │   ├── 📄 categoryReducer.js       # Reducer for categories
-│   │   ├── 📄 chatReducer.js           # Reducer for chat functionalities
-│   │   ├── 📄 dashboardIndexReducer.js # Reducer for dashboard indices
-│   │   ├── 📄 OrderReducer.js          # Reducer for orders
-│   │   ├── 📄 PaymentReducer.js        # Reducer for payments
-│   │   ├── 📄 productReducer.js        # Reducer for products
-│   │   ├── 📄 sellerReducer.js         # Reducer for sellers
-│   │   └── 📄 rootReducers.js          # Combines all reducers
-│   └── 📄 index.js                     # Redux store configuration
-│
-├── 📂 utils
-│   └── 📄 utils.js         # Helper functions for common tasks
-│
-├── 📂 views
-│   ├── 📂 admin
-│   │   ├── 📄 AdminDashboard.jsx   # Admin panel dashboard view
-│   │   ├── 📄 Category.jsx         # Manage product categories
-│   │   ├── 📄 ChatSeller.jsx       # Chat interface for sellers
-│   │   ├── 📄 DeactiveSellers.jsx  # List of deactivated sellers
-│   │   ├── 📄 OrderDetails.jsx     # Detailed order view
-│   │   ├── 📄 Orders.jsx           # Admin order management
-│   │   ├── 📄 PaymentRequest.jsx   # View for payment requests
-│   │   ├── 📄 SellerDetails.jsx    # Detailed view of a seller
-│   │   ├── 📄 SellerRequest.jsx    # Manage seller approval requests
-│   │   └── 📄 Sellers.jsx          # Overview of all sellers
-│   │
-│   ├── 📂 auth
-│   │   ├── 📄 AdminLogin.jsx       # Admin login interface
-│   │   ├── 📄 Login.jsx            # General user login
-│   │   └── 📄 Register.jsx         # User registration form
-│   │
-│   ├── 📂 components
-│   │   └── 📄 Search.jsx           # Reusable search component
-│   │
-│   ├── 📂 seller
-│       ├── 📄 AddBanner.jsx        # Add promotional banners
-│       ├── 📄 AddProduct.jsx       # Add new products
-│       ├── 📄 DeleteProduct.jsx    # Delete existing products
-│       ├── 📄 EditProduct.jsx      # Edit product details
-│       ├── 📄 OrderDetails.jsx     # Detailed view of seller orders
-│       ├── 📄 Orders.jsx           # Seller order management
-│       └── 📄 Payments.jsx         # Manage seller payments
-│       └── 📄 Products.jsx        
-│       └── 📄 Profile.jsx        
-│       └── 📄 SellerDashboard.jsx        
-│       └── 📄 SellerToAdmin.jsx         
-│       └── 📄 SellerToCustomer.jsx
-│   ├── 📄 Deactive.jsx
-│   ├── 📄 Home.jsx
-│   ├── 📄 Pagination.jsx  
-│   ├── 📄 Pending.jsx
-│   ├── 📄 Success.jsx  
-│   ├── 📄 UnAuthorized.jsx            
-
-
-
-
 ## Key Features
 
 ### 1. **Role-Based Access and Navigation**
@@ -467,3 +376,92 @@ npm start
 
 To run the local host in build mode, use the following command:
 npm run build
+
+
+
+📂 public
+└── 📄 index.html      # Main HTML file for the application
+
+📂 src
+├── 📂 api
+│   └── 📄 api.js       # Centralized API calls and configurations
+│
+├── 📂 assets
+│   └── (images, stylesheets, or other assets go here)
+│
+├── 📂 layout
+│   ├── 📄 Header.jsx       # Application header component
+│   ├── 📄 MainLayout.jsx   # Main layout wrapper for the app
+│   └── 📄 Sidebar.jsx      # Sidebar navigation component
+│
+├── 📂 navigation
+│   ├── 📄 allNav.js        # Centralized navigation items
+│   └── 📄 index.js         # Navigation index for exporting
+│
+├── 📂 router
+│   ├── 📂 routes
+│   │   ├── 📄 adminRoutes.js      # Admin-specific route definitions
+│   │   ├── 📄 privateRoutes.js    # Private route definitions
+│   │   ├── 📄 ProtectRoute.jsx    # Guard for protected routes
+│   │   ├── 📄 publicRoutes.js     # Public route definitions
+│   │   └── 📄 sellerRoutes.js     # Seller-specific route definitions
+│   └── 📄 Router.jsx              # Centralized routing configuration
+│
+├── 📂 store
+│   ├── 📂 Reducers
+│   │   ├── 📄 authReducer.js           # Reducer for authentication
+│   │   ├── 📄 bannerReducer.js         # Reducer for banners
+│   │   ├── 📄 categoryReducer.js       # Reducer for categories
+│   │   ├── 📄 chatReducer.js           # Reducer for chat functionalities
+│   │   ├── 📄 dashboardIndexReducer.js # Reducer for dashboard indices
+│   │   ├── 📄 OrderReducer.js          # Reducer for orders
+│   │   ├── 📄 PaymentReducer.js        # Reducer for payments
+│   │   ├── 📄 productReducer.js        # Reducer for products
+│   │   ├── 📄 sellerReducer.js         # Reducer for sellers
+│   │   └── 📄 rootReducers.js          # Combines all reducers
+│   └── 📄 index.js                     # Redux store configuration
+│
+├── 📂 utils
+│   └── 📄 utils.js         # Helper functions for common tasks
+│
+├── 📂 views
+│   ├── 📂 admin
+│   │   ├── 📄 AdminDashboard.jsx   # Admin panel dashboard view
+│   │   ├── 📄 Category.jsx         # Manage product categories
+│   │   ├── 📄 ChatSeller.jsx       # Chat interface for sellers
+│   │   ├── 📄 DeactiveSellers.jsx  # List of deactivated sellers
+│   │   ├── 📄 OrderDetails.jsx     # Detailed order view
+│   │   ├── 📄 Orders.jsx           # Admin order management
+│   │   ├── 📄 PaymentRequest.jsx   # View for payment requests
+│   │   ├── 📄 SellerDetails.jsx    # Detailed view of a seller
+│   │   ├── 📄 SellerRequest.jsx    # Manage seller approval requests
+│   │   └── 📄 Sellers.jsx          # Overview of all sellers
+│   │
+│   ├── 📂 auth
+│   │   ├── 📄 AdminLogin.jsx       # Admin login interface
+│   │   ├── 📄 Login.jsx            # General user login
+│   │   └── 📄 Register.jsx         # User registration form
+│   │
+│   ├── 📂 components
+│   │   └── 📄 Search.jsx           # Reusable search component
+│   │
+│   ├── 📂 seller
+│       ├── 📄 AddBanner.jsx        # Add promotional banners
+│       ├── 📄 AddProduct.jsx       # Add new products
+│       ├── 📄 DeleteProduct.jsx    # Delete existing products
+│       ├── 📄 EditProduct.jsx      # Edit product details
+│       ├── 📄 OrderDetails.jsx     # Detailed view of seller orders
+│       ├── 📄 Orders.jsx           # Seller order management
+│       └── 📄 Payments.jsx         # Manage seller payments
+│       └── 📄 Products.jsx        
+│       └── 📄 Profile.jsx        
+│       └── 📄 SellerDashboard.jsx        
+│       └── 📄 SellerToAdmin.jsx         
+│       └── 📄 SellerToCustomer.jsx
+│   ├── 📄 Deactive.jsx
+│   ├── 📄 Home.jsx
+│   ├── 📄 Pagination.jsx  
+│   ├── 📄 Pending.jsx
+│   ├── 📄 Success.jsx  
+│   ├── 📄 UnAuthorized.jsx            
+
