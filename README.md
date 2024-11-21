@@ -39,7 +39,9 @@ Please organize and complete the following deliverables within this repository:
 
 ### 3. **Live Application URL**
 - Deploy your application to a platform like Vercel, Netlify, or AWS.
-- **Link to Live App**: [Insert live application URL here]
+- **Link to Live App**: Client app:https://tractor-client.vercel.app
+                        dashboard: https://tractor-dashboard.vercel.app [the admin and seller share the dashboards  to login as an admin add /admin/login to the link]
+                        backend: https://tractor-backend-xk1t.onrender.com 
 
 ### 4. **Technical Documentation**
 - Include setup instructions for running the project locally.
@@ -48,8 +50,8 @@ Please organize and complete the following deliverables within this repository:
 
 ### 5. **Project Report**
 Complete this section in a separate ReadMe file `report.md`:
-- **Project Name**: [Insert your project name]
-- **Team Members**: [List all members and their GitHub handles]
+- **Project Name**: Tractor hub
+- **Team Members**: [Gavin Arori]
 - **Tech Stack**: [Mention all technologies used]
 - **Key Features**: [Briefly list the implemented features]
 - **Challenges**: [Summarize major challenges faced and how they were solved]
