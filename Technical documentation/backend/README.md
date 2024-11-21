@@ -66,7 +66,8 @@ backend/
 ├── seed.js                                # Script for seeding initial data into the database.
 └── server.js                              # Entry point for the backend application; initializes the server.
 
-# Key Highlights
+
+ # Key Highlights
 
 1. controllers/: Contains all logic for handling API requests. Each subfolder or file is specific to a module or functionality (e.g., chat, dashboard).
 2. middlewares/: Stores middleware functions for handling request pre-processing (e.g., authentication).
