@@ -39,23 +39,24 @@ Please organize and complete the following deliverables within this repository:
 
 ### 3. **Live Application URL**
 - Deploy your application to a platform like Vercel, Netlify, or AWS.
-- **Link to Live App**: Client app:https://tractor-client.vercel.app
-                        dashboard: https://tractor-dashboard.vercel.app [the admin and seller share the dashboards  to login as an admin add /admin/login to the link]
-                        backend: https://tractor-backend-xk1t.onrender.com 
+- **Link to Live App**: 
+-Client app:https://tractor-client.vercel.app
+-dashboard: https://tractor-dashboard.vercel.app [the admin and seller share the dashboards  to login as an admin add /admin/login to the link]
+-backend: https://tractor-backend-xk1t.onrender.com 
 
 ### 4. **Technical Documentation**
-- Include setup instructions for running the project locally.
+- Include setup instructions for running the project locally.[Check in the Technical documentation folder]
 - Provide any architecture diagrams or flowcharts explaining the design.
-- **Documentation**: Add details in a `docs/` folder or link to relevant markdown files.
+- **Documentation**: Add details in a `Technical documentation/` folder or link to relevant markdown files.
 
 ### 5. **Project Report**
 Complete this section in a separate ReadMe file `report.md`:
 - **Project Name**: Tractor hub
-- **Team Members**: [Gavin Arori]
-- **Tech Stack**: [Mention all technologies used]
-- **Key Features**: [Briefly list the implemented features]
-- **Challenges**: [Summarize major challenges faced and how they were solved]
-- **Lessons Learned**: [Highlight key takeaways from the project]
+- **Team Members**: Gavin Arori
+- **Tech Stack**: Check in the Technical documentation folder
+- **Key Features**: Check in the Technical documentation folder
+- **Challenges**: Check in the Technical documentation folder
+- **Lessons Learned**: Check in the Technical documentation folder
 
 ---
 

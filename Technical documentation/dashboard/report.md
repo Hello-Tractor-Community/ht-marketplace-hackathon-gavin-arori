@@ -146,6 +146,23 @@
 ---
 
 
+### Key Steps Added to Login As an Admin:
+
+1. **Log in as Admin**:
+   - Access the admin login page via `/admin/login` e.g `http://localhost:5000/admin/login`.
+   - Use these tologin to the admin credentials (email:`admin@example.com` and password:`securepassword`) to log in.
+
+2. **Seed New Admin**:
+   - Instructions on seeding a new admin via `seed.js`.
+   - Guide on running the seed script to create admin credentials.
+
+3. **General Notes**:
+   - Mentioned that the login functionality requires proper JWT authentication and protection for admin routes.
+
+---
+
+Feel free to update any URLs or paths depending on your actual project setup. Let me know if you'd like to add or modify anything else!
+
 ## Key Features
 
 ### 1. **Role-Based Access and Navigation**
@@ -239,6 +256,8 @@
 ---
 
 This project delivers a complete solution for multi-role platforms, ensuring efficient navigation, secure authentication, and robust state management while fostering smooth collaboration across users.
+
+
 
 ## Tech Stack Used
 
@@ -336,6 +355,8 @@ This project delivers a complete solution for multi-role platforms, ensuring eff
 
 4. **Focus on User Roles**:
    - Role-based separation of views (Admin, Seller, and Public) helped tailor user experiences efficiently.
+
+
 
 
 # Setup Instructions for Running the Project Locally
