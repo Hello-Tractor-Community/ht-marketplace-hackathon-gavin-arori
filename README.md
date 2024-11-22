@@ -35,7 +35,7 @@ Please organize and complete the following deliverables within this repository:
 
 ### 2. **Demo Video**
 - Upload your video to YouTube, Vimeo, or as an mp4 file.
-- **Link to Demo Video**: [Insert your video link here]
+- **Link to Demo Video**: [https://drive.google.com/file/d/1Y7ebRTUlQvRuheEvC8ZT1nNEL1cmvFjF/view?usp=drive_link]
 
 ### 3. **Live Application URL**
 - Deploy your application to a platform like Vercel, Netlify, or AWS.
@@ -47,6 +47,9 @@ Please organize and complete the following deliverables within this repository:
 ### 4. **Technical Documentation**
 - Include setup instructions for running the project locally.[Check in the Technical documentation folder]
 - Provide any architecture diagrams or flowcharts explaining the design.
+- backend flowchart: [https://app.eraser.io/workspace/6LDuiK3NA2PR0IkcvNz7?origin=share]
+- frontend flowchart: [https://app.eraser.io/workspace/T28L5Oia8hxsRupzOQyE?origin=share]
+- dashboard flowchart: [https://app.eraser.io/workspace/RKQ8KMXH1PxMll4rbl2M?origin=share]
 - **Documentation**: Add details in a `Technical documentation/` folder or link to relevant markdown files.
 
 ### 5. **Project Report**
