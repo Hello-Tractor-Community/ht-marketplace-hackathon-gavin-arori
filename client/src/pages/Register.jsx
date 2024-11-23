@@ -125,7 +125,7 @@ const Register = () => {
 
                                 <button 
                                     type="submit" 
-                                    className="w-full mt-5 bg-black text-white py-2 rounded-lg"
+                                    className="w-full mt-5 bg-red-600 text-white py-2 rounded-lg"
                                     disabled={loader}
                                 >
                                     {loader ? 'Loading...' : 'Register'}
